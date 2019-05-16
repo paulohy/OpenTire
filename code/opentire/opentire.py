@@ -1,6 +1,6 @@
 __author__ = 'henningo'
 
-from TireModel import *
+from .TireModel import *
 
 
 class OpenTire:

@@ -30,18 +30,18 @@ class TIRFile():
 
 
         if output is True:
-            print self.Comments
-            print self.Coefficients
+            print (self.Comments)
+            print (self.Coefficients)
 
         # Create the model based on type in TIR file
         opentire = OpenTire()
         self.Coefficients['PROPERTY_FILE_FORMAT'] = self.Coefficients['PROPERTY_FILE_FORMAT'].replace("'", "")
-        print self.Coefficients['PROPERTY_FILE_FORMAT']
+        print (self.Coefficients['PROPERTY_FILE_FORMAT'])
         tm = opentire.createmodel(self.Coefficients['PROPERTY_FILE_FORMAT'])
-        print tm
+        print (tm)
 
         if tm == None:
-            print "Model could not be recognized"
+            print ("Model could not be recognized")
             return None
 
         # Assign parameters to the model
@@ -52,7 +52,7 @@ class TIRFile():
 
             else:
                 if output is True:
-                    print "Could not map parameter: " + str(parameter_name)
+                    print ("Could not map parameter: " + str(parameter_name))
 
         return tm
 
@@ -84,7 +84,7 @@ class TIRFile():
             model_type = tire_model.ModelInfo['Name']
             subfolder = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
             template_filename = subfolder + '\\Templates\\' + model_type + '.tir'
-            print "Using TIR template"
+            print ("Using TIR template")
 
         else:  # Load the resulting file
             # TODO: check if it is a real TIR file
@@ -93,7 +93,7 @@ class TIRFile():
         # Load a TIR-file and build a dictionary of parameters
         f = open(template_filename, 'r')
         tir_data = f.readlines()
-        print len(tir_data)
+        print (len(tir_data))
         f.close()
 
         f = open(fname, 'wb')

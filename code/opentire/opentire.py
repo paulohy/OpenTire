@@ -12,7 +12,7 @@ class OpenTire:
         tm = None
 
         if modelname == 'Harty':
-            print 'Harty not implemented'
+            print('Harty not implemented')
 
         elif modelname == 'PAC2002':
             tm = PAC2002()

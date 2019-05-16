@@ -41,7 +41,7 @@ for fz in loads:
 
     yvals = []
 
-    for  in slip_angles:
+    for sa_val in slip_angles:
         state[xchan] = float(sa_val)
         state['FZ'] = float(fz)
         resultstate = myTiremodel.solve(state)

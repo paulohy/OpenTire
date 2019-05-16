@@ -34,7 +34,7 @@ loads = [500, 1000, 1500]
 
 slip_angles = np.arange(-12, 12, 0.1) * 0.01
 
-
+xvals= slip_angles
 i = 1
 
 for fz in loads:
